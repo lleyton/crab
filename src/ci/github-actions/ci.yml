@@ -14,7 +14,6 @@
 # step CI will fail.
 
 ---
-
 ###############################
 #   YAML Anchors Definition   #
 ###############################
@@ -30,7 +29,6 @@
 # The expand-yaml-anchors tool will automatically remove this block from the
 # output YAML file.
 x--expand-yaml-anchors--remove:
-
   - &shared-ci-variables
     CI_JOB_NAME: ${{ matrix.name }}
     CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
@@ -76,15 +74,15 @@ x--expand-yaml-anchors--remove:
     env: {}
 
   - &job-linux-4c
-    os: ubuntu-20.04-4core-16gb
+    os: ubuntu-latest
     <<: *base-job
 
   - &job-linux-8c
-    os: ubuntu-20.04-8core-32gb
+    os: ubuntu-latest
     <<: *base-job
 
   - &job-linux-16c
-    os: ubuntu-20.04-16core-64gb
+    os: ubuntu-latest
     <<: *base-job
 
   - &job-macos-xl
